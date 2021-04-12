@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Javascript</title>
-<script src="script.js"></script>
+ <meta charset="utf-8">
+<title>Find Out The Cat</title>
 </head>
-<body>
- <h1>Click the button to have some fun.</h1>
- <h2 id="demo">Click the button to change the color and font style of this line.<<p></p>>
- <button onclick="sayHello()">Click me</button>
-  <button onclick="showTopic()">Press me</button>
+
+<body style="background-color:lavender;">
+ <h2 style="text-align:center;">你能找出藏在猫头鹰中的小喵吗？</h2>
+ <h4 style="color:#A8A8A8">
+     Click the button to get the prompt
+     <button onclick="prompt()">Click me</button>
+ </h4>
+  <img src="cat.jpg"/ height="546";width="528";alt="Planets" usemap="#planetmap">
+
+<!--<body onmousedown="show_coords(event)"-->
+
+ <map name="planetmap">
+     <area shape="rect" coords="75,384,145,430" alt="Congratulations" href="Congratulations.jpeg">
+  </map>
+
+
+<script>
+function prompt(){
+ alert("猫头鹰和小猫的嘴巴是不同的哦~~");
+};
+
+	  /*function show_coords(event){
+			x=event.clientX
+			y=event.clientY
+			alert("X 坐标: " + x + ", Y 坐标: " + y)
+		}*/
+
+</script>
 </body>
 </html>
