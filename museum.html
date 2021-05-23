@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <title>The Museum of Innocence</title>
+
+    <meta charset="utf-8">
+    <meta property="og:title" content="Leaflet — an open-source JavaScript library for interactive maps" />
+    <meta property="og:description" content="Leaflet is a modern, lightweight open-source JavaScript library for mobile-friendly interactive maps." />
+    <meta property="og:image" content="docs/images/logo.png" />
+
+    <meta itemprop="name" content="Leaflet">
+    <meta itemprop="description" content="Leaflet — a modern, lightweight open-source JavaScript library for mobile-friendly interactive maps.">
+    <meta itemprop="image" content="docs/images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link href="https://leafletjs.com/atom.xml" type="application/atom+xml" rel="alternate" title="Leaflet Dev Blog Atom Feed" />
+
+    <link rel="stylesheet" href="docs/css/normalize.css" />
+    <link rel="stylesheet" href="docs/css/main.css" />
+
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,300' rel='stylesheet' type='text/css'>
+
+    <script src="docs/highlight/highlight.pack.js"></script>
+    <link rel="stylesheet" href="docs/highlight/styles/github-gist.css" />
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	   <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>
+    <link href="mystyle.css" rel="stylesheet" >
+    <link rel="stylesheet" href="214_www.dowebok.com/css/zoomify.min.css">
+
+    <script>
+  		ACCESS_TOKEN = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+  		MB_ATTR = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+  			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+  		MB_URL = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + ACCESS_TOKEN;
+  		OSM_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  		OSM_ATTRIB = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+  	</script>
+
+  </head>
+
+  <body>
+    <!--Navigation -->
+  <nav class="navbar navbar-expand-md sticky-top navbar-dark" style="background-color: #000000;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="img/img1.png" width="370" height="53" alt="...">
+     <!--a class="navbar-brand mb-0 h1"  href="#">The Museum of Innocence</a-->
+     </a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" >
+       <span class="navbar-toggler-icon"></span>
+      </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav ml-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="#carouselExampleFade">Home <span class="sr-only">(current)</span></a>
+       </li>
+      <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+           Dropdown
+         </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+           <a class="dropdown-item" href="#rose">Text</a>
+           <a class="dropdown-item" href="#columns">Exhibit</a>
+           <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#jack">Connect</a>
+         </div>
+       </li>
+     </ul>
+     <!--form class="form-inline my-2 my-lg-0">
+       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+       <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+     </form-->
+    </div>
+  </div>
+</nav>
+
+<!-- Image Slider-->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/img15.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+          <h1 class="display-3 text-center">Escape With The Museum of Innocence</h1>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/img14.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!--Welcome Section-->
+<div class="container-fluid" style="background:#F8F8FF;">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <br><hr class="my-4"><br><br><br>
+      <h1 class="display-4 text-left" style="text-indent:0.9em;">Love is a revolution</h1>
+      <br><br><br>
+    </div>
+    <div class="col-md-12">
+      <p style="color:gray; font-size:25px; font-family:STsong;";>狄德罗说,人们无穷无尽的痛斥感情，人们把人的一切痛苦都归罪于感情，而忘记了感情也是快乐的源泉，可是只有情感，而且只有大的情感才能使灵魂达到伟大的成就。
+        感情淡薄使人平庸，情感衰退使接杰出的人失色，一勉强就消灭了自然伟大的力量。</p><br><br><br>
+    </div>
+  </div>
+</div>
+
+<!--scroll down-->
+<div class="wrapper">
+  <div class="parallax-img"></div>
+</div>
+<div class="wrapper2" id="rose">
+  <br><br><br>
+  <div class="col-md-12"><p style="font-size:18px">在我去凯斯金家吃晚饭的八年时间里，我积攒了芙颂的4213个烟头。这些一头碰到过芙颂那玫瑰般的嘴唇，进入她的嘴巴，
+    有时就像我摸到滤嘴时明白的那样因为碰到了她的舌头被浸湿，以及多数时候被涂抹在她嘴唇上的口红染上了一层可爱红色的烟头，全都是带着深切痛苦和幸福回忆的非常特殊和私密的东西。</p></div>
+  <div class="col-md-12"><p style="font-size:18px">芙颂离开的很长一段时间里，我只能在世界各地的博物馆里感受深刻的理解和安慰。
+    参观这些博物馆时，我不会因为迈哈迈特公寓楼里的那些藏品而害羞。我慢慢地从一个对自己积攒的物件感到害羞的收集者变成了一个自豪的收藏家</p></div>
+  <div class="col-md-12"><p style="font-size:18px">我建成了一座“纯真博物馆”。这里不是像卢浮宫和波堡那样拥挤和宏伟的地方，它隐藏在伊斯坦布尔的街巷中。
+    这里就是我的家，能依恋着这些浸透了深切情感和记忆的物件入眠，还有什么比这更美好的呢？“纯真博物馆”中所有物件的故事，就是我对芙颂的爱情故事。</p></div>
+  <br>
+</div>
+
+
+<!--Photo section-->
+<!--div class="container-fluid" style="background-color: #000000;">
+  <br>
+  <br>
+  <h1 class="display-3" style="color: #FFFFFF;">Lost in Istanbul</h1>
+  <br>
+  <br>
+  <div class="card-columns">
+    <div class="card">
+      <img class="card-img-top" src="img/img2.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #FFFFFF;">Card title that wraps to a new line</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="img/img1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #FFFFFF;">Card title that wraps to a new line</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="img/img6.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #FFFFFF;">Card title</h5>
+        <p class="card-text" style="color: #FFFFFF;">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img" src="img/img7.jpg" alt="Card image">
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="img/img18.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #FFFFFF;">Card title that wraps to a new line</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="img/img12.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #FFFFFF;">Card title that wraps to a new line</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+</div>
+</div-->
+<div class="col-md-12">
+  <hr class="my-4"><br><br><br>
+  <h1 class="display-4 text-left" style="text-indent:1.2em;">Lost In Istanbul</h1>
+</div>
+<div id="columns">
+    <figure>
+    <div class="wrap">
+      <img class="zoomify" src="img/img18.jpg">
+    </div>
+    <div class="figcaption" style="font-size:1rem"><p>No.1  芙颂的耳环</p>
+      当芙颂的耳环从她的左耳掉落时，我没发现，那是我人生最幸福的时刻。
+    </div>
+  </figure>
+
+    <figure>
+      <div class="wrap">
+        <img class="zoomify" src="img/img12.jpg">
+      </div>
+    <div class="figcaption" style="font-size:1rem"><p>No.16 国产汽水</p>
+      扎伊姆的梅尔泰姆汽水成功又很快沉寂，但这些未影响他们的幸福。我为他们感到高兴。
+    </div>
+    </figure>
+
+  <figure>
+    <div class="wrap">
+      <img class="zoomify" src="img/img4.jpg">
+    </div>
+    <div class="figcaption" style="font-size:1rem"><p>No.21 被咬了1口</p>
+      夏天的夜晚，推着三轮小车在托普哈内和楚库尔主麻小巷里的卡米尔，边喊“奶油冰淇淋！”，边摇铃慢慢转悠。
+    </div>
+  </figure>
+
+    <figure>
+      <div class="wrap">
+        <img class="zoomify" src="img/img3.jpg">
+      </div>
+    <div class="figcaption" style="font-size:1rem"><p>No.7    4213个烟头</p>
+      看到一两个烟头和它们下面的日期，我想起在炎热的夏夜里，我们吃过的油炸茄子、酸奶以及我和芙颂一起看着窗外的情景。
+    </div>
+    </figure>
+
+   <figure>
+     <div class="wrap">
+       <img class="zoomify" src="img/img7.jpg">
+     </div>
+    </figure>
+
+   <figure>
+     <div class="wrap">
+       <img class="zoomify" src="img/img2.jpg">
+     </div>
+    <div class="figcaption" style="font-size:1rem"><p>No.76 无法起身告辞</p>
+      打听时间，就意味着安排我们和外面那个世界的关系。
+    </div>
+    </figure>
+
+    <figure>
+      <div class="wrap">
+        <img class="zoomify" src="img/img22.jpg">
+      </div>
+    <div class="figcaption" style="font-size:1rem"><p>No.196  房间</p>
+      有些人会用物件来充斥他们生活的地方，临死前再把他们的家变成博物馆。而我在试图用我的床，我的房间和我的存在，把一个已经被变成博物馆的地方在变回到家的状态。
+    </div>
+    </figure>
+
+   <figure>
+     <div class="wrap">
+       <img class="zoomify" src="img/img24.jpg">
+     </div>
+    <div class="figcaption" style="font-size:1rem"><p>No.55 幸福仅仅就是靠近所爱的人</p>
+      那个晚上，我喝得烂醉，把芙颂的耳环放在了凯斯金家拥挤的洗手台上。我下定决心永不见她。
+    </div>
+    </figure>
+
+    <figure>
+      <div class="wrap">
+        <img class="zoomify" src="img/img21.jpg">
+      </div>
+    <div class="figcaption" style="font-size:1rem"><p>No. 131 在凯斯金家吃了8年晚饭</p>
+      大多数人甚至没发现这些物品建立起来的情感关系就把它们给遗忘了，即使盐瓶伴随着这些人度过了人生中的一段重要时光。
+    </div>
+    </figure>
+</div>
+<script type="text/javascript" async="" charset="utf-8" src="https://c.cnzz.com/core.php?web_id=1253231826&amp;t=z"></script>
+<script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+<script src="214_www.dowebok.com/js/zoomify.min.js"></script>
+<script>
+$(function() {
+	$('.zoomify').zoomify();
+});
+</script>
+
+<!--map-->
+<div class="col-md-12">
+  <hr class="my-4"><br>
+  <h1 class="display-4 text-left" style="text-indent:1.2em;">Visit Istanbul</h1>
+</div>
+
+
+  <div id="map" class="map map-home" style="height: 300px; margin-top: 50px"></div>
+
+
+<!--	var mymap = L.map('mapid').setView([41.007, 28.968], 13);-->
+
+  <script>
+  	var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  		osmAttrib = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  		osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+
+  	var map = L.map('map').setView([41.007, 28.968], 14).addLayer(osm);
+
+  </script>
+
+
+  <script>
+  	var _gaq = _gaq || [];
+  	_gaq.push([ '_setAccount', 'UA-4147697-4' ]);
+  	_gaq.push([ '_trackPageview' ]);
+
+  	(function() {
+  		var ga = document.createElement('script');
+  		ga.type = 'text/javascript';
+  		ga.async = true;
+  		ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+  				: 'http://www')
+  				+ '.google-analytics.com/ga.js';
+  		var s = document.getElementsByTagName('script')[0];
+  		s.parentNode.insertBefore(ga, s);
+  	})();
+  </script>
+
+  <script src="docs/js/docs.js"></script>
+
+
+
+<!-- Jumbotron -->
+<div class="container-fluid">
+  <div class="row jumbotron">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+      <p class="lead">关于芙颂，关于爱，关于伊斯坦布尔的往昔。</p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+      <a href="#carouselExampleFade"><button type="button" class="btn btn-outline-dark btn-lg">Web Hosting</button></a>
+    </div>
+  </div>
+</div>
+
+<!-- Fixed background>
+<figure>
+  <div class="fixed-wrap">
+    <div id="fixed">
+    </div>
+  </div>
+</figure-->
+
+
+<!-- Connect -->
+<footer id="jack">
+  <div class="container-fluid" style="background:#000000">
+    <div class="row">
+      <br><br>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="img/0.png" style="width: 73px;height:73px">
+        <hr size="3" color=#696969>
+        <p>Monday: 9am-5pm</p>
+        <p>Saturday: 10am-4pm</p>
+        <p>Sunday: closed</p>
+      </div>
+      <div class="col-md-4">
+        <br><br>
+        <h5>联系我们</h5>
+        <hr size="2" color=#696969>
+        <p>150-8458-6676</p>
+        <p>emai.myemail.com</p>
+        <p>100 Street Name</p>
+        <p>City,State,0000</p>
+      </div>
+      <div class="col-md-4">
+        <br><br>
+        <h5>关注我们</h5>
+        <hr size="2" color=#696969>
+        <div class="btn-group-vertical">
+          <input name="btn" type="image" src="img/1.png" style="width: 50px;height:50px"><br>
+          <input name="btn" type="image" src="img/2.png" style="width: 50px;height:50px"><br>
+          <input name="btn" type="image" src="img/3.png" style="width: 50px;height:50px"><br>
+          <input name="btn" type="image" src="img/4.png" style="width: 50px;height:50px">
+      </div>
+      </div>
+      <div class="col-12 text-center">
+        <hr color=#696969>
+        <h5>&copy;w3newbie.com</h5>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    </body>
+</html>

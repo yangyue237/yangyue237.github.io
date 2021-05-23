@@ -1,0 +1,142 @@
+@media (max-width: 1200px) {
+  legend {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+  h1,
+  .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  h2,
+  .h2 {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+  h3,
+  .h3 {
+    font-size: calc(1.3rem + 0.6vw);
+  }
+  h4,
+  .h4 {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+  .display-1 {
+    font-size: calc(1.725rem + 5.7vw);
+  }
+  .display-2 {
+    font-size: calc(1.675rem + 5.1vw);
+  }
+  .display-3 {
+    font-size: calc(1.575rem + 3.9vw);
+  }
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
+  .close {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+}
+
+.light{
+  border-top:1px solid #000000;
+  width:75%;
+}
+
+
+.wrapper {
+  height: 100vh;
+}
+
+.wrapper2{
+  height:100%;
+  background-color:#F8F8F8;
+}
+
+.parallax-img {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrap { margin: 0 auto;}
+.wrap img { max-width: 100%;}
+
+
+
+    p {
+      margin: 30px;
+      font-size: 1.1rem;
+    }
+
+    .parallax-img {
+      background-image: url('img/img20.jpg');
+    }
+
+
+
+@font-face{font-family:'Calluna';
+ src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
+}
+body {
+    background: url(//subtlepatterns.com/patterns/scribble_light.png);
+  font-family: Calluna,Arial, sans-serif;
+  min-height: 1000px;
+}
+#columns {
+    column-width: 320px;
+    column-gap: 15px;
+  width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+
+
+div#columns figure {
+    background: #fefefe;
+    border: 2px solid #fcfcfc;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    margin: 0 2px 15px;
+    padding: 15px;
+    padding-bottom: 10px;
+    transition: opacity .4s ease-in-out;
+  display: inline-block;
+  column-break-inside: avoid;
+}
+
+div#columns figure img {
+    width: 100%; height: auto;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+div#columns figure figcaption {
+  font-size: .9rem;
+    color: #444;
+  line-height: 1.5;
+}
+
+div#columns small {
+  font-size: 1rem;
+  float: right;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+div#columns small a {
+  color: #666;
+  text-decoration: none;
+  transition: .4s color;
+}
+
+div#columns:hover figure:not(:hover) {
+    opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) {
+  #columns { column-gap: 0px; }
+  #columns figure { width: 100%; }
+}
+
+#jack{color:#FFFFFF}
